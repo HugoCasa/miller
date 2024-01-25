@@ -1,0 +1,52 @@
+custom:
+  all:
+    failed: 22
+    score: 0.2666666666666667
+    total: 30
+  deno:
+    failed: 12
+    score: 0.19999999999999996
+    total: 15
+  python:
+    failed: 10
+    score: 0.33333333333333337
+    total: 15
+humaneval:
+  all:
+    failed: 135
+    score: 0.04929577464788737
+    total: 142
+  deno:
+    failed: 61
+    score: 0.046875
+    total: 64
+  python:
+    failed: 74
+    score: 0.05128205128205132
+    total: 78
+mbpp:
+  all:
+    failed: 266
+    score: 0.20833333333333337
+    total: 336
+  deno:
+    failed: 95
+    score: 0.26356589147286824
+    total: 129
+  python:
+    failed: 171
+    score: 0.17391304347826086
+    total: 207
+overall:
+  all:
+    failed: 423
+    score: 0.16732283464566933
+    total: 508
+  deno:
+    failed: 168
+    score: 0.1923076923076923
+    total: 208
+  python:
+    failed: 255
+    score: 0.15000000000000002
+    total: 300

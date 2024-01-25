@@ -1,0 +1,1111 @@
+openapi: 3.0.2
+info:
+  contact:
+    name: Andy Boothe
+    url: https://github.com/sigpwned/pinecone-openapi-spec
+  description: Pinecone is a vector database. This is an unofficial, community-managed OpenAPI spec that (should) accurately model the Pinecone API. This project was developed independent of and is unaffiliated with Pinecone Systems. Users should switch to the official API spec, if and when Pinecone releases it.
+  title: Pinecone API
+  version: '20230406.1'
+servers:
+  - url: https://controller.{environment}.pinecone.io
+    variables:
+      environment:
+        default: us-east1-gcp
+        description: The regional deployment to use. Must match API key.
+        enum:
+          - us-west1-gcp
+          - us-west4-gcp
+          - us-central1-gcp
+          - us-east1-gcp
+          - us-east4-gcp
+          - eu-west1-gcp
+          - us-east1-aws
+security:
+  - ApiKey: []
+tags:
+  - description: Endpoints for manipulating indexes
+    name: Index Operations
+  - description: Endpoints for manipulating vectors
+    name: Vector Operations
+externalDocs:
+  description: The official Pinecone API documentation
+  url: https://docs.pinecone.io/
+paths:
+  /collections:
+    get:
+      description: This operation returns a list of your Pinecone collections.
+      operationId: list_collections
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items: &ref_16
+                  description: The unique name of a collection.
+                  example: example
+                  format: CollectionName
+                  nullable: false
+                  type: string
+                type: array
+          description: This operation returns a list of all the collections in your current project.
+      summary: List collections
+      tags:
+        - Index Operations
+    post:
+      description: This operation creates a Pinecone collection.
+      operationId: create_collection
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties: &ref_14
+                name:
+                  description: The unique name of a collection.
+                  example: example
+                  format: CollectionName
+                  nullable: false
+                  type: string
+                source:
+                  description: The unique name of an index.
+                  example: example
+                  format: IndexName
+                  maxLength: 45
+                  minLength: 1
+                  nullable: false
+                  type: string
+              required: &ref_15
+                - name
+                - source
+              type: object
+        required: true
+      responses:
+        '201':
+          description: The collection has been successfully created.
+        '400':
+          content: &ref_2
+            text/plain:
+              schema:
+                type: string
+          description: Quota exceeded, or invalid parameters.
+        '409':
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: A collection with the name provided already exists.
+        '500':
+          content: &ref_0
+            text/plain:
+              schema:
+                type: string
+          description: Internal error. Can be caused by invalid parameters.
+      summary: Create collection
+      tags:
+        - Index Operations
+  /collections/{collectionName}:
+    delete:
+      description: This operation deletes an existing collection.
+      operationId: delete_collection
+      responses:
+        '202':
+          description: The collection has been successfully deleted.
+        '404':
+          content: &ref_1
+            text/plain:
+              schema:
+                type: string
+          description: Collection not found.
+        '500':
+          content: *ref_0
+          description: Internal error. Can be caused by invalid parameters.
+      summary: Delete Collection
+      tags:
+        - Index Operations
+    get:
+      description: Get a description of a collection.
+      operationId: describe_collection
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_12
+                  name:
+                    description: The unique name of a collection.
+                    example: example
+                    format: CollectionName
+                    nullable: false
+                    type: string
+                  size:
+                    example: 3590359
+                    format: int64
+                    type: integer
+                  status:
+                    description: The current status of a collection.
+                    example: Ready
+                    format: CollectionState
+                    nullable: false
+                    type: string
+                required: &ref_13
+                  - name
+                  - size
+                  - status
+                type: object
+          description: This operation returns a list of all the collections in your current project.
+        '404':
+          content: *ref_1
+          description: Collection not found.
+        '500':
+          content: *ref_0
+          description: Internal error. Can be caused by invalid parameters.
+      summary: Describe collection
+      tags:
+        - Index Operations
+    parameters:
+      - in: path
+        name: collectionName
+        required: true
+        schema:
+          description: The unique name of a collection.
+          example: example
+          format: CollectionName
+          nullable: false
+          type: string
+  /databases:
+    get:
+      description: This operation returns a list of your Pinecone indexes.
+      operationId: list_indexes
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items: &ref_33
+                  description: The unique name of an index.
+                  example: example
+                  format: IndexName
+                  maxLength: 45
+                  minLength: 1
+                  nullable: false
+                  type: string
+                type: array
+          description: This operation returns a list of all the indexes that you have previously created, and which are associated with the given API key
+      summary: List indexes
+      tags:
+        - Index Operations
+    post:
+      description: This operation creates a Pinecone index. You can use it to specify the measure of similarity, the dimension of vectors to be stored in the index, the numbers of replicas to use, and more.
+      operationId: create_index
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties: &ref_27
+                dimension:
+                  description: The number of dimensions in the vector representation
+                  format: int32
+                  maximum: 20000
+                  minimum: 1
+                  type: integer
+                metadata_config:
+                  description: Configuration for the behavior of Pinecone's internal metadata index. By default, all metadata is indexed; when metadata_config is present, only specified metadata fields are indexed.
+                  properties: &ref_29
+                    indexed:
+                      example:
+                        - hello
+                      items:
+                        type: string
+                      minLength: 0
+                      type: array
+                  type: object
+                metric:
+                  description: The vector similarity metric of the index
+                  enum: &ref_3
+                    - euclidean
+                    - cosine
+                    - dotproduct
+                  type: string
+                name:
+                  description: The unique name of an index.
+                  example: example
+                  format: IndexName
+                  maxLength: 45
+                  minLength: 1
+                  nullable: false
+                  type: string
+                pod_type:
+                  description: The pod type
+                  enum: &ref_4
+                    - s1.x1
+                    - s1.x2
+                    - s1.x4
+                    - s1.x8
+                    - p1.x1
+                    - p1.x2
+                    - p1.x4
+                    - p1.x8
+                    - p2.x1
+                    - p2.x2
+                    - p2.x4
+                    - p2.x8
+                  type: string
+                pods:
+                  default: 1
+                  description: The number of pods for the index to use,including replicas.
+                  format: int32
+                  minimum: 1
+                  type: integer
+                replicas:
+                  default: 1
+                  description: The number of replicas. Replicas duplicate your index. They provide higher availability and throughput.
+                  format: int32
+                  minimum: 1
+                  type: integer
+                source_collection:
+                  description: The unique name of a collection.
+                  example: example
+                  format: CollectionName
+                  nullable: false
+                  type: string
+              required: &ref_28
+                - name
+                - dimension
+              type: object
+        required: true
+      responses:
+        '201':
+          description: The collection has been successfully created.
+        '400':
+          content: *ref_2
+          description: Quota exceeded, or invalid parameters.
+        '409':
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Index of given name already exists.
+        '500':
+          content: *ref_0
+          description: Internal error. Can be caused by invalid parameters.
+      summary: Create index
+      tags:
+        - Index Operations
+  /databases/{indexName}:
+    delete:
+      description: This operation deletes an existing index.
+      operationId: delete_index
+      responses:
+        '202':
+          description: The index has been successfully deleted.
+        '404':
+          content: &ref_5
+            text/plain:
+              schema:
+                type: string
+          description: Index not found.
+        '500':
+          content: *ref_0
+          description: Internal error. Can be caused by invalid parameters.
+      summary: Delete Index
+      tags:
+        - Index Operations
+    get:
+      description: Get a description of an index.
+      operationId: describe_index
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_24
+                  database:
+                    properties: &ref_26
+                      dimension:
+                        description: The number of dimensions in the vector representation
+                        format: int32
+                        maximum: 20000
+                        minimum: 1
+                        type: integer
+                      metric:
+                        description: The vector similarity metric of the index
+                        enum: *ref_3
+                        type: string
+                      name:
+                        description: The unique name of an index.
+                        example: example
+                        format: IndexName
+                        maxLength: 45
+                        minLength: 1
+                        nullable: false
+                        type: string
+                      pod_type:
+                        description: The pod type
+                        enum: *ref_4
+                        type: string
+                      pods:
+                        format: int32
+                        minimum: 1
+                        type: integer
+                      replicas:
+                        format: int32
+                        minimum: 1
+                        type: integer
+                      shards:
+                        format: int32
+                        minimum: 1
+                        type: integer
+                    type: object
+                  status:
+                    properties: &ref_32
+                      host:
+                        format: Hostname
+                        type: string
+                      port:
+                        format: int32
+                        type: integer
+                      ready:
+                        type: boolean
+                      state:
+                        description: The current status of a index.
+                        enum: &ref_31
+                          - Initializing
+                          - ScalingUp
+                          - ScalingDown
+                          - Terminating
+                          - Ready
+                        example: Ready
+                        format: IndexState
+                        nullable: false
+                        type: string
+                    type: object
+                type: object
+          description: This operation returns a list of all the collections in your current project.
+        '404':
+          content: *ref_5
+          description: Index not found.
+        '500':
+          content: *ref_0
+          description: Internal error. Can be caused by invalid parameters.
+      summary: Describe index
+      tags:
+        - Index Operations
+    parameters:
+      - in: path
+        name: indexName
+        required: true
+        schema:
+          description: The unique name of an index.
+          example: example
+          format: IndexName
+          maxLength: 45
+          minLength: 1
+          nullable: false
+          type: string
+    patch:
+      description: This operation specifies the pod type and number of replicas for an index.
+      operationId: configure_index
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties: &ref_25
+                pod_type:
+                  description: The pod type
+                  enum: *ref_4
+                  type: string
+                replicas:
+                  default: 1
+                  description: The desired number of replicas for the index.
+                  format: int32
+                  minimum: 1
+                  type: integer
+              type: object
+        required: true
+      responses:
+        '201':
+          description: The index has been successfully updated.
+        '400':
+          content: *ref_2
+          description: Quota exceeded, or invalid parameters.
+        '404':
+          content: *ref_5
+          description: Index not found.
+        '500':
+          content: *ref_0
+          description: Internal error. Can be caused by invalid parameters.
+      summary: Configure index
+      tags:
+        - Index Operations
+  /describe_index_stats:
+    post:
+      description: The `DescribeIndexStats` operation returns statistics about the index's contents, including the vector count per namespace and the number of dimensions.
+      operationId: DescribeIndexStats
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties: &ref_19
+                filter:
+                  additionalProperties: true
+                  description: If this parameter is present, the operation only affects vectors that satisfy the filter. See https://www.pinecone.io/docs/metadata-filtering/.
+                  example: &ref_6
+                    hello:
+                      - alpha
+                      - bravo
+                  type: object
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_20
+                  dimension:
+                    description: The number of dimensions in the vector representation
+                    format: int32
+                    maximum: 20000
+                    minimum: 1
+                    type: integer
+                  indexFullness:
+                    description: The fullness of the index, regardless of whether a metadata filter expression was passed. The granularity of this metric is 10%.
+                    format: float
+                    type: number
+                  namespaces:
+                    additionalProperties:
+                      properties: &ref_30
+                        vectorCount:
+                          format: int64
+                          type: integer
+                      type: object
+                    type: object
+                  totalVectorCount:
+                    format: int64
+                    type: integer
+                type: object
+          description: A successful response
+      summary: Describe Index Stats
+      tags:
+        - Vector Operations
+    servers:
+      - url: https://{index_name}-{project_id}.svc.{environment}.pinecone.io
+        variables:
+          environment:
+            default: us-east1-gcp
+            description: The cloud environment
+            enum:
+              - us-west1-gcp
+              - us-west4-gcp
+              - us-central1-gcp
+              - us-east1-gcp
+              - us-east4-gcp
+              - eu-west1-gcp
+              - us-east1-aws
+          index_name:
+            default: example
+            description: The name of the index being manipulated
+          project_id:
+            default: abcd1234
+            description: The project being manipulated
+  /query:
+    post:
+      description: The `Query` operation searches a namespace, using a query vector. It retrieves the ids of the most similar items in a namespace, along with their similarity scores.
+      operationId: Query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties: &ref_36
+                filter:
+                  additionalProperties: true
+                  description: If this parameter is present, the operation only affects vectors that satisfy the filter. See https://www.pinecone.io/docs/metadata-filtering/.
+                  example: *ref_6
+                  type: object
+                id:
+                  description: The unique ID of a vector
+                  example: vector-0
+                  format: VectorId
+                  type: string
+                includeMetadata:
+                  default: false
+                  type: boolean
+                includeValues:
+                  default: false
+                  type: boolean
+                namespace:
+                  description: An index namespace name
+                  example: namespace-0
+                  format: NamespaceName
+                  type: string
+                sparseVector:
+                  description: Vector sparse data. Represented as a list of indices and a list of corresponded values, which must be the same length.
+                  properties: &ref_7
+                    indices:
+                      description: The indices of the sparse data.
+                      example:
+                        - 1
+                      items:
+                        format: int64
+                        type: integer
+                      type: array
+                    values:
+                      description: The corresponding values of the sparse data, which must be the same length as the indices.
+                      example:
+                        - 2
+                      items:
+                        format: float
+                        type: number
+                      type: array
+                  required: &ref_8
+                    - indices
+                    - values
+                  type: object
+                topK:
+                  default: 100
+                  description: The number of results to return for each query.
+                  format: int64
+                  maximum: 10000
+                  minimum: 0
+                  type: integer
+                vector:
+                  description: Vector dense data. This should be the same length as the dimension of the index being queried.
+                  example: &ref_9
+                    - 1
+                    - 2
+                    - 3
+                  items: &ref_10
+                    format: float
+                    type: number
+                  type: array
+              required: &ref_37
+                - topK
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_38
+                  matches:
+                    items:
+                      properties: &ref_34
+                        id:
+                          description: The unique ID of a vector
+                          example: vector-0
+                          format: VectorId
+                          type: string
+                        metadata:
+                          additionalProperties: true
+                          example: &ref_11
+                            hello: alpha
+                          type: object
+                        score:
+                          format: float
+                          type: number
+                        sparseValues:
+                          description: Vector sparse data. Represented as a list of indices and a list of corresponded values, which must be the same length.
+                          properties: *ref_7
+                          required: *ref_8
+                          type: object
+                        values:
+                          description: Vector dense data. This should be the same length as the dimension of the index being queried.
+                          example: *ref_9
+                          items: *ref_10
+                          type: array
+                      required: &ref_35
+                        - id
+                      type: object
+                    type: array
+                  namespace:
+                    description: An index namespace name
+                    example: namespace-0
+                    format: NamespaceName
+                    type: string
+                type: object
+          description: A successful response
+      summary: Query
+      tags:
+        - Vector Operations
+    servers:
+      - url: https://{index_name}-{project_id}.svc.{environment}.pinecone.io
+        variables:
+          environment:
+            default: us-east1-gcp
+            description: The cloud environment
+            enum:
+              - us-west1-gcp
+              - us-west4-gcp
+              - us-central1-gcp
+              - us-east1-gcp
+              - us-east4-gcp
+              - eu-west1-gcp
+              - us-east1-aws
+          index_name:
+            default: example
+            description: The name of the index being manipulated
+          project_id:
+            default: abcd1234
+            description: The project being manipulated
+  /vectors/delete:
+    post:
+      description: The `Delete` operation deletes vectors, by id, from a single namespace. You can delete items by their id, from a single namespace.
+      operationId: Delete
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties: &ref_17
+                deleteAll:
+                  default: false
+                  type: boolean
+                filter:
+                  additionalProperties: true
+                  description: If this parameter is present, the operation only affects vectors that satisfy the filter. See https://www.pinecone.io/docs/metadata-filtering/.
+                  example: *ref_6
+                  type: object
+                ids:
+                  items:
+                    description: The unique ID of a vector
+                    example: vector-0
+                    format: VectorId
+                    type: string
+                  maxLength: 1000
+                  type: array
+                namespace:
+                  description: An index namespace name
+                  example: namespace-0
+                  format: NamespaceName
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_18 {}
+                type: object
+          description: A successful response
+      summary: Delete
+      tags:
+        - Vector Operations
+    servers:
+      - url: https://{index_name}-{project_id}.svc.{environment}.pinecone.io
+        variables:
+          environment:
+            default: us-east1-gcp
+            description: The cloud environment
+            enum:
+              - us-west1-gcp
+              - us-west4-gcp
+              - us-central1-gcp
+              - us-east1-gcp
+              - us-east4-gcp
+              - eu-west1-gcp
+              - us-east1-aws
+          index_name:
+            default: example
+            description: The name of the index being manipulated
+          project_id:
+            default: abcd1234
+            description: The project being manipulated
+  /vectors/fetch:
+    post:
+      description: The `Fetch` operation looks up and returns vectors, by ID, from a single namespace. The returned vectors include the vector data and/or metadata.
+      operationId: Fetch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties: &ref_21
+                ids:
+                  items:
+                    description: The unique ID of a vector
+                    example: vector-0
+                    format: VectorId
+                    type: string
+                  maxLength: 1000
+                  type: array
+                namespace:
+                  description: An index namespace name
+                  example: namespace-0
+                  format: NamespaceName
+                  type: string
+              required: &ref_22
+                - ids
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_23
+                  namespace:
+                    description: An index namespace name
+                    example: namespace-0
+                    format: NamespaceName
+                    type: string
+                  vectors:
+                    additionalProperties:
+                      description: Vector dense data. This should be the same length as the dimension of the index being queried.
+                      example: *ref_9
+                      items: *ref_10
+                      type: array
+                    type: object
+                type: object
+          description: A successful response
+      summary: Fetch
+      tags:
+        - Vector Operations
+    servers:
+      - url: https://{index_name}-{project_id}.svc.{environment}.pinecone.io
+        variables:
+          environment:
+            default: us-east1-gcp
+            description: The cloud environment
+            enum:
+              - us-west1-gcp
+              - us-west4-gcp
+              - us-central1-gcp
+              - us-east1-gcp
+              - us-east4-gcp
+              - eu-west1-gcp
+              - us-east1-aws
+          index_name:
+            default: example
+            description: The name of the index being manipulated
+          project_id:
+            default: abcd1234
+            description: The project being manipulated
+  /vectors/update:
+    post:
+      description: The `Update` operation updates vector in a namespace. If a value is included, it will overwrite the previous value. If a set_metadata is included, the values of the fields specified in it will be added or overwrite the previous value.
+      operationId: Update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties: &ref_39
+                id:
+                  description: The vector's unique ID
+                  format: VectorId
+                  type: string
+                namespace:
+                  description: An index namespace name
+                  example: namespace-0
+                  format: NamespaceName
+                  type: string
+                setMetadata:
+                  additionalProperties: true
+                  example: *ref_11
+                  type: object
+                sparseValues:
+                  description: Vector sparse data. Represented as a list of indices and a list of corresponded values, which must be the same length.
+                  properties: *ref_7
+                  required: *ref_8
+                  type: object
+                values:
+                  description: Vector dense data. This should be the same length as the dimension of the index being queried.
+                  example: *ref_9
+                  items: *ref_10
+                  type: array
+              required: &ref_40
+                - id
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_41 {}
+                type: object
+          description: A successful response
+      summary: Fetch
+      tags:
+        - Vector Operations
+    servers:
+      - url: https://{index_name}-{project_id}.svc.{environment}.pinecone.io
+        variables:
+          environment:
+            default: us-east1-gcp
+            description: The cloud environment
+            enum:
+              - us-west1-gcp
+              - us-west4-gcp
+              - us-central1-gcp
+              - us-east1-gcp
+              - us-east4-gcp
+              - eu-west1-gcp
+              - us-east1-aws
+          index_name:
+            default: example
+            description: The name of the index being manipulated
+          project_id:
+            default: abcd1234
+            description: The project being manipulated
+  /vectors/upsert:
+    post:
+      description: The Upsert operation writes vectors into a namespace. If a new value is upserted for an existing vector id, it will overwrite the previous value.
+      operationId: Upsert
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties: &ref_42
+                namespace:
+                  description: An index namespace name
+                  example: namespace-0
+                  format: NamespaceName
+                  type: string
+                vectors:
+                  items:
+                    properties: &ref_45
+                      id:
+                        description: The unique ID of a vector
+                        example: vector-0
+                        format: VectorId
+                        type: string
+                      metadata:
+                        additionalProperties: true
+                        example: *ref_11
+                        type: object
+                      sparseValues:
+                        description: Vector sparse data. Represented as a list of indices and a list of corresponded values, which must be the same length.
+                        properties: *ref_7
+                        required: *ref_8
+                        type: object
+                      values:
+                        description: Vector dense data. This should be the same length as the dimension of the index being queried.
+                        example: *ref_9
+                        items: *ref_10
+                        type: array
+                    type: object
+                  maxLength: 100
+                  type: array
+              required: &ref_43
+                - vectors
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_44
+                  upsertedCount:
+                    format: int64
+                    type: integer
+                type: object
+          description: A successful response
+      summary: Upsert
+      tags:
+        - Vector Operations
+    servers:
+      - url: https://{index_name}-{project_id}.svc.{environment}.pinecone.io
+        variables:
+          environment:
+            default: us-east1-gcp
+            description: The cloud environment
+            enum:
+              - us-west1-gcp
+              - us-west4-gcp
+              - us-central1-gcp
+              - us-east1-gcp
+              - us-east4-gcp
+              - eu-west1-gcp
+              - us-east1-aws
+          index_name:
+            default: example
+            description: The name of the index being manipulated
+          project_id:
+            default: abcd1234
+            description: The project being manipulated
+components:
+  responses:
+    BadRequest:
+      content: *ref_2
+      description: Quota exceeded, or invalid parameters.
+    CollectionNotFound:
+      content: *ref_1
+      description: Collection not found.
+    IndexNotFound:
+      content: *ref_5
+      description: Index not found.
+    InternalError:
+      content: *ref_0
+      description: Internal error. Can be caused by invalid parameters.
+  schemas:
+    Collection:
+      properties: *ref_12
+      required: *ref_13
+      type: object
+    CollectionDefinition:
+      properties: *ref_14
+      required: *ref_15
+      type: object
+    CollectionName:
+      description: The unique name of a collection.
+      example: example
+      format: CollectionName
+      nullable: false
+      type: string
+    CollectionState:
+      description: The current status of a collection.
+      example: Ready
+      format: CollectionState
+      nullable: false
+      type: string
+    CollectionsList:
+      items: *ref_16
+      type: array
+    DeleteRequest:
+      properties: *ref_17
+      type: object
+    DeleteResponse:
+      properties: *ref_18
+      type: object
+    DescribeIndexStatsRequest:
+      properties: *ref_19
+      type: object
+    DescribeIndexStatsResponse:
+      properties: *ref_20
+      type: object
+    Environment:
+      enum:
+        - us-west1-gcp
+        - us-west4-gcp
+        - us-central1-gcp
+        - us-east1-gcp
+        - us-east4-gcp
+        - eu-west1-gcp
+        - us-east1-aws
+      type: string
+    ErrorMessage:
+      type: string
+    FetchRequest:
+      properties: *ref_21
+      required: *ref_22
+      type: object
+    FetchResponse:
+      properties: *ref_23
+      type: object
+    Index:
+      properties: *ref_24
+      type: object
+    IndexConfiguration:
+      properties: *ref_25
+      type: object
+    IndexDatabase:
+      properties: *ref_26
+      type: object
+    IndexDefinition:
+      properties: *ref_27
+      required: *ref_28
+      type: object
+    IndexMetadataConfig:
+      description: Configuration for the behavior of Pinecone's internal metadata index. By default, all metadata is indexed; when metadata_config is present, only specified metadata fields are indexed.
+      properties: *ref_29
+      type: object
+    IndexMetric:
+      description: The vector similarity metric of the index
+      enum: *ref_3
+      type: string
+    IndexName:
+      description: The unique name of an index.
+      example: example
+      format: IndexName
+      maxLength: 45
+      minLength: 1
+      nullable: false
+      type: string
+    IndexNamespaceStats:
+      properties: *ref_30
+      type: object
+    IndexState:
+      description: The current status of a index.
+      enum: *ref_31
+      example: Ready
+      format: IndexState
+      nullable: false
+      type: string
+    IndexStatus:
+      properties: *ref_32
+      type: object
+    IndexesList:
+      items: *ref_33
+      type: array
+    NamespaceName:
+      description: An index namespace name
+      example: namespace-0
+      format: NamespaceName
+      type: string
+    PodType:
+      description: The pod type
+      enum: *ref_4
+      type: string
+    QueryMatch:
+      properties: *ref_34
+      required: *ref_35
+      type: object
+    QueryRequest:
+      properties: *ref_36
+      required: *ref_37
+      type: object
+    QueryResponse:
+      properties: *ref_38
+      type: object
+    SparseVectorData:
+      description: Vector sparse data. Represented as a list of indices and a list of corresponded values, which must be the same length.
+      properties: *ref_7
+      required: *ref_8
+      type: object
+    UpdateRequest:
+      properties: *ref_39
+      required: *ref_40
+      type: object
+    UpdateResponse:
+      properties: *ref_41
+      type: object
+    UpsertRequest:
+      properties: *ref_42
+      required: *ref_43
+      type: object
+    UpsertResponse:
+      properties: *ref_44
+      type: object
+    UpsertVector:
+      properties: *ref_45
+      type: object
+    VectorData:
+      description: Vector dense data. This should be the same length as the dimension of the index being queried.
+      example: *ref_9
+      items: *ref_10
+      type: array
+    VectorDimensionality:
+      description: The number of dimensions in the vector representation
+      format: int32
+      maximum: 20000
+      minimum: 1
+      type: integer
+    VectorFilter:
+      additionalProperties: true
+      description: If this parameter is present, the operation only affects vectors that satisfy the filter. See https://www.pinecone.io/docs/metadata-filtering/.
+      example: *ref_6
+      type: object
+    VectorId:
+      description: The unique ID of a vector
+      example: vector-0
+      format: VectorId
+      type: string
+    VectorMetadata:
+      additionalProperties: true
+      example: *ref_11
+      type: object
+  securitySchemes:
+    ApiKey:
+      in: header
+      name: Api-Key
+      type: apiKey

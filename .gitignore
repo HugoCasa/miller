@@ -1,0 +1,10 @@
+.venv
+.env
+.ruff_cache
+
+.DS_Store
+__pycache__
+*.bak
+
+models/**/*_samples.yaml
+models/**/*_results.yaml

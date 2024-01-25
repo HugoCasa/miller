@@ -1,0 +1,567 @@
+openapi: 3.0.3
+info:
+  description: Resend is the email platform for developers.
+  title: Resend
+  version: 1.0.0
+servers:
+  - url: https://api.resend.com
+security:
+  - bearerAuth: []
+tags:
+  - description: Start sending emails through the Resend API.
+    name: Emails
+  - description: Create and manage domains through the Resend API.
+    name: Domains
+  - description: Create and manage API Keys through the Resend API.
+    name: API Keys
+paths:
+  /api-keys:
+    get:
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_15
+                  data:
+                    items:
+                      properties: &ref_3
+                        created_at:
+                          description: The date and time the API key was created.
+                          format: date-time
+                          type: string
+                        id:
+                          description: The ID of the API key.
+                          type: string
+                        name:
+                          description: The name of the API key.
+                          type: string
+                      type: object
+                    type: array
+                type: object
+          description: OK
+      summary: Retrieve a list of API keys
+      tags:
+        - API Keys
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties: &ref_5
+                domain_id:
+                  description: Restrict an API key to send emails only from a specific domain. Only used when the permission is sending_acces.
+                  type: string
+                name:
+                  description: The API key name.
+                  type: string
+                permission:
+                  description: The API key can have full access to Resend’s API or be only restricted to send emails. * full_access - Can create, delete, get, and update any resource. * sending_access - Can only send emails.
+                  enum:
+                    - full_access
+                    - sending_access
+                  type: string
+              required: &ref_6
+                - name
+              type: object
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                properties: &ref_7
+                  id:
+                    description: The ID of the API key.
+                    type: string
+                  token:
+                    description: The token of the API key.
+                    type: string
+                type: object
+          description: OK
+      summary: Create a new API key
+      tags:
+        - API Keys
+  /api-keys/{api_key_id}:
+    delete:
+      parameters:
+        - in: path
+          name: api_key_id
+          required: true
+          schema:
+            description: The API key ID.
+            type: string
+      responses:
+        '200':
+          description: OK
+      summary: Remove an existing API key
+      tags:
+        - API Keys
+  /domains:
+    get:
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_17
+                  data:
+                    items:
+                      properties: &ref_16
+                        created_at:
+                          description: The date and time the domain was created.
+                          example: '2023-04-26T20:21:26.347412+00:00'
+                          format: date-time
+                          type: string
+                        id:
+                          description: The ID of the domain.
+                          example: d91cd9bd-1176-453e-8fc1-35364d380206
+                          type: string
+                        name:
+                          description: The name of the domain.
+                          example: example.com
+                          type: string
+                        region:
+                          description: The region where the domain is hosted.
+                          example: us-east-1
+                          type: string
+                        status:
+                          description: The status of the domain.
+                          example: not_started
+                          type: string
+                      type: object
+                    type: array
+                type: object
+          description: OK
+      summary: Retrieve a list of domains
+      tags:
+        - Domains
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties: &ref_9
+                name:
+                  description: The name of the domain you want to create.
+                  type: string
+                region:
+                  default: us-east-1
+                  description: The region where emails will be sent from. Possible values are us-east-1' | 'eu-west-1' | 'sa-east-1
+                  enum:
+                    - us-east-1
+                    - eu-west-1
+                    - sa-east-1
+                  type: string
+              required: &ref_10
+                - name
+              type: object
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                properties: &ref_11
+                  created_at:
+                    description: The date and time the domain was created.
+                    format: date-time
+                    type: string
+                  id:
+                    description: The ID of the domain.
+                    type: string
+                  name:
+                    description: The name of the domain.
+                    type: string
+                  records:
+                    items:
+                      properties: &ref_0
+                        name:
+                          description: The name of the record.
+                          type: string
+                        priority:
+                          description: The priority of the record.
+                          type: integer
+                        record:
+                          description: The type of record.
+                          type: string
+                        status:
+                          description: The status of the record.
+                          type: string
+                        ttl:
+                          description: The time to live for the record.
+                          type: string
+                        type:
+                          description: The type of record.
+                          type: string
+                        value:
+                          description: The value of the record.
+                          type: string
+                      type: object
+                    type: array
+                  region:
+                    description: The region where the domain is hosted.
+                    type: string
+                  status:
+                    description: The status of the domain.
+                    type: string
+                type: object
+          description: OK
+      summary: Create a new domain
+      tags:
+        - Domains
+  /domains/{domain_id}:
+    delete:
+      parameters:
+        - in: path
+          name: domain_id
+          required: true
+          schema:
+            description: The ID of the domain.
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_12
+                  deleted:
+                    description: Indicates whether the domain was deleted successfully.
+                    example: true
+                    type: boolean
+                  id:
+                    description: The ID of the domain.
+                    example: d91cd9bd-1176-453e-8fc1-35364d380206
+                    type: string
+                  object:
+                    description: The type of object.
+                    example: domain
+                    type: string
+                type: object
+          description: OK
+      summary: Remove an existing domain
+      tags:
+        - Domains
+    get:
+      parameters:
+        - in: path
+          name: domain_id
+          required: true
+          schema:
+            description: The ID of the domain.
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_13
+                  created_at:
+                    description: The date and time the domain was created.
+                    example: '2023-04-26T20:21:26.347412+00:00'
+                    format: date-time
+                    type: string
+                  id:
+                    description: The ID of the domain.
+                    example: d91cd9bd-1176-453e-8fc1-35364d380206
+                    type: string
+                  name:
+                    description: The name of the domain.
+                    example: example.com
+                    type: string
+                  object:
+                    description: The type of object.
+                    example: domain
+                    type: string
+                  records:
+                    items:
+                      properties: *ref_0
+                      type: object
+                    type: array
+                  region:
+                    description: The region where the domain is hosted.
+                    example: us-east-1
+                    type: string
+                  status:
+                    description: The status of the domain.
+                    example: not_started
+                    type: string
+                type: object
+          description: OK
+      summary: Retrieve a single domain
+      tags:
+        - Domains
+  /domains/{domain_id}/verify:
+    post:
+      parameters:
+        - in: path
+          name: domain_id
+          required: true
+          schema:
+            description: The ID of the domain.
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_20
+                  id:
+                    description: The ID of the domain.
+                    example: d91cd9bd-1176-453e-8fc1-35364d380206
+                    type: string
+                  object:
+                    description: The type of object.
+                    example: domain
+                    type: string
+                type: object
+          description: OK
+      summary: Verify an existing domain
+      tags:
+        - Domains
+  /emails:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties: &ref_1
+                attachments:
+                  items:
+                    properties: &ref_4
+                      content:
+                        description: Content of an attached file.
+                        format: binary
+                        type: string
+                      filename:
+                        description: Name of attached file.
+                        type: string
+                      path:
+                        description: Path where the attachment file is hosted
+                        type: string
+                    type: object
+                  type: array
+                bcc:
+                  description: Bcc recipient email address. For multiple addresses, send as an array of strings.
+                  type: string
+                cc:
+                  description: Cc recipient email address. For multiple addresses, send as an array of strings.
+                  type: string
+                from:
+                  description: Sender email address. To include a friendly name, use the format "Your Name <sender@domain.com>".
+                  type: string
+                headers:
+                  description: Custom headers to add to the email.
+                  type: object
+                html:
+                  description: The HTML version of the message.
+                  type: string
+                reply_to:
+                  description: Reply-to email address. For multiple addresses, send as an array of strings.
+                  type: string
+                subject:
+                  description: Email subject.
+                  type: string
+                tags:
+                  items:
+                    properties: &ref_19
+                      name:
+                        description: The name of the email tag. It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-). It can contain no more than 256 characters.
+                        type: string
+                      value:
+                        description: The value of the email tag.It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-). It can contain no more than 256 characters.
+                        type: string
+                    type: object
+                  type: array
+                text:
+                  description: The plain text version of the message.
+                  type: string
+                to:
+                  items:
+                    description: Recipient email address. For multiple addresses, send as an array of strings. Max 50.
+                    type: string
+                  type: array
+              required: &ref_2
+                - from
+                - to
+                - subject
+              type: object
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_18
+                  id:
+                    description: The ID of the sent email.
+                    type: string
+                type: object
+          description: OK
+      summary: Send an email
+      tags:
+        - Emails
+  /emails/batch:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                properties: *ref_1
+                required: *ref_2
+                type: object
+              type: array
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_8
+                  data:
+                    items:
+                      properties:
+                        id:
+                          description: The ID of the sent email.
+                          type: string
+                      type: object
+                    type: array
+                type: object
+          description: OK
+      summary: Trigger up to 100 batch emails at once.
+      tags:
+        - Emails
+  /emails/{email_id}:
+    get:
+      parameters:
+        - in: path
+          name: email_id
+          required: true
+          schema:
+            description: The ID of the email.
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties: &ref_14
+                  bcc:
+                    description: The email addresses of the blind carbon copy recipients.
+                    items:
+                      type: string
+                    type: array
+                  cc:
+                    description: The email addresses of the carbon copy recipients.
+                    items:
+                      type: string
+                    type: array
+                  created_at:
+                    description: The date and time the email was created.
+                    example: '2023-04-03T22:13:42.674981+00:00'
+                    format: date-time
+                    type: string
+                  from:
+                    description: The email address of the sender.
+                    example: Acme <onboarding@resend.dev>
+                    type: string
+                  html:
+                    description: The HTML body of the email.
+                    example: Congrats on sending your <strong>first email</strong>!
+                    type: string
+                  id:
+                    description: The ID of the email.
+                    example: 4ef9a417-02e9-4d39-ad75-9611e0fcc33c
+                    type: string
+                  last_event:
+                    description: The status of the email.
+                    example: delivered
+                    type: string
+                  object:
+                    description: The type of object.
+                    example: email
+                    type: string
+                  reply_to:
+                    description: The email addresses to which replies should be sent.
+                    items:
+                      type: string
+                    type: array
+                  subject:
+                    description: The subject line of the email.
+                    example: Hello World
+                    type: string
+                  text:
+                    description: The plain text body of the email.
+                    type: string
+                  to:
+                    example:
+                      - delivered@resend.dev
+                    items:
+                      description: The email addresses of the recipients.
+                      type: string
+                    type: array
+                type: object
+          description: OK
+      summary: Retrieve a single email
+      tags:
+        - Emails
+components:
+  schemas:
+    ApiKey:
+      properties: *ref_3
+      type: object
+    Attachment:
+      properties: *ref_4
+      type: object
+    CreateApiKeyRequest:
+      properties: *ref_5
+      required: *ref_6
+      type: object
+    CreateApiKeyResponse:
+      properties: *ref_7
+      type: object
+    CreateBatchEmailsResponse:
+      properties: *ref_8
+      type: object
+    CreateDomainRequest:
+      properties: *ref_9
+      required: *ref_10
+      type: object
+    CreateDomainResponse:
+      properties: *ref_11
+      type: object
+    DeleteDomainResponse:
+      properties: *ref_12
+      type: object
+    Domain:
+      properties: *ref_13
+      type: object
+    DomainRecord:
+      properties: *ref_0
+      type: object
+    Email:
+      properties: *ref_14
+      type: object
+    ListApiKeysResponse:
+      properties: *ref_15
+      type: object
+    ListDomainsItem:
+      properties: *ref_16
+      type: object
+    ListDomainsResponse:
+      properties: *ref_17
+      type: object
+    SendEmailRequest:
+      properties: *ref_1
+      required: *ref_2
+      type: object
+    SendEmailResponse:
+      properties: *ref_18
+      type: object
+    Tag:
+      properties: *ref_19
+      type: object
+    VerifyDomainResponse:
+      properties: *ref_20
+      type: object
+  securitySchemes:
+    bearerAuth:
+      scheme: bearer
+      type: http

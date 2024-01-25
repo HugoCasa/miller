@@ -1,0 +1,15 @@
+python-dotenv==1.0.0
+openai==1.1.0
+torch==2.1.0
+transformers==4.35.0
+jsonlines==4.0.0
+tqdm==4.66.1
+pyyaml==6.0.1
+
+# benchmark requirements
+stripe==7.10.0
+pytelegrambotapi==4.14.1
+supabase==2.3.0
+slack_sdk==3.26.1
+pinecone-client==2.2.4
+twilio==8.11.0
