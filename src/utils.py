@@ -2,14 +2,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from openai import OpenAI
 import re
 import yaml
 from torch import Tensor
-
-
-# OpenAI
-client = OpenAI()
 
 
 def generate_sample(
@@ -21,6 +16,9 @@ def generate_sample(
     return_probs: bool = False,
     seed: int | None = 42,
 ):
+    from openai import OpenAI
+
+    client = OpenAI()
     response = client.chat.completions.create(
         model=model_name,
         messages=messages,
