@@ -123,10 +123,10 @@ if __name__ == "__main__":
         )
     )
 
-    # instructions = "return the number of commits of a given github repository"
+    # instructions = "return the commits of a given github repository"
     # kind = "gen"
-    # model_name = "hugocasa/miller-6.7B-openapi-aligned"
-    # # model_name = "hugocasa/miller-220m-openapi"
+    # # model_name = "hugocasa/miller-6.7B-openapi-aligned"
+    # model_name = "hugocasa/miller-220m-openapi"
     # lang = "python"
     # print(
     #     generate(
@@ -134,7 +134,7 @@ if __name__ == "__main__":
     #         instructions=instructions,
     #         kind=kind,
     #         model_name=model_name,
-    #         device="cuda",
+    #         device="mps",
     #         verbose=True,
     #     )
     # )

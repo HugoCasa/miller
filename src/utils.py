@@ -160,6 +160,11 @@ def get_resource_type_def(
         return match.group(0).strip() if match else None
 
 
+def to_camel_case(snake_str: str):
+    components = snake_str.split("_")
+    return components[0] + "".join(x.title() for x in components[1:])
+
+
 def to_pascal_case(snake_str: str):
     components = snake_str.split("_")
     return "".join(x.title() for x in components)
