@@ -1,0 +1,4050 @@
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    s3
+  resource_type_def: |-
+    class s3(TypedDict):
+        endPoint: str
+        port: int
+        useSSL: bool
+        pathStyle: bool
+        bucket: str
+        accessKey: str
+        secretKey: str
+        region: str
+- lang: |-
+    python
+  resource_type: |-
+    pinecone
+  resource_type_def: |-
+    class pinecone(TypedDict):
+        apiKey: str
+        environment: str
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    error_details
+  resource_type_def: |-
+    class error_details(TypedDict):
+        # Define the structure of the error details as per your requirements
+        message: str
+        code: int
+        # Add more fields as needed
+- lang: |-
+    python
+  resource_type: |-
+    hubspot
+  resource_type_def: |-
+    class hubspot(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    faunadb
+  resource_type_def: |-
+    class faunadb(TypedDict):
+        region: str
+        secret: str
+- lang: |-
+    python
+  resource_type: |-
+    telegram
+  resource_type_def: |-
+    class telegram(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    openai_auth
+  resource_type_def: |-
+    class openai_auth(TypedDict):
+        api_key: str
+        organization_id: str
+- lang: |-
+    python
+  resource_type: |-
+    notion
+  resource_type_def: |-
+    class notion(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    sendgrid
+  resource_type_def: |-
+    class sendgrid(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    faunadb
+  resource_type_def: |-
+    class faunadb(TypedDict):
+        region: str
+        secret: str
+- lang: |-
+    python
+  resource_type: |-
+    telegram
+  resource_type_def: |-
+    class telegram(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    resource
+  resource_type_def: |-
+    class resource(TypedDict):
+        resources: List[Any]
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    openai_typeddict
+  resource_type_def: |-
+    class openai_typeddict(TypedDict):
+        api_key: str
+        organization_id: str
+- lang: |-
+    python
+  resource_type: |-
+    gsheets
+  resource_type_def: |-
+    class gsheets(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gitlab
+  resource_type_def: |-
+    class gitlab(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    sql
+  resource_type_def: |-
+    class sql(TypedDict):
+        statement: str
+        timeout: int
+        database: str
+        schema: str
+- lang: |-
+    python
+  resource_type: |-
+    airtable
+  resource_type_def: |-
+    class airtable(TypedDict):
+        apiKey: str
+- lang: |-
+    python
+  resource_type: |-
+    openai_typeddict
+  resource_type_def: |-
+    class openai_typeddict(TypedDict):
+        api_key: str
+        organization_id: str
+- lang: |-
+    python
+  resource_type: |-
+    notion
+  resource_type_def: |-
+    class notion(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    supabase
+  resource_type_def: |-
+    class supabase(TypedDict):
+        url: str
+        key: str
+- lang: |-
+    python
+  resource_type: |-
+    notion
+  resource_type_def: |-
+    class notion(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gsheets
+  resource_type_def: |-
+    class gsheets(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    openai
+  resource_type_def: |-
+    class openai(TypedDict):
+        api_key: str
+        organization_id: str
+- lang: |-
+    python
+  resource_type: |-
+    windmill
+  resource_type_def: |-
+    class windmill(TypedDict):
+        message: str
+        flow_id: str
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    airtable
+  resource_type_def: |-
+    class airtable(TypedDict):
+        apiKey: str
+- lang: |-
+    python
+  resource_type: |-
+    github
+  resource_type_def: |-
+    class github(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    windmill
+  resource_type_def: |-
+    class windmill(TypedDict):
+        # Define the structure of the windmill TypedDict based on the expected JSON data
+        # Example:
+        # name: str
+        # age: int
+        # This is a placeholder as the actual structure is not provided in the TypeScript code
+        pass
+- lang: |-
+    python
+  resource_type: |-
+    github
+  resource_type_def: |-
+    class github(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gsheets
+  resource_type_def: |-
+    class gsheets(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gitlab
+  resource_type_def: |-
+    class gitlab(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    windmillhub
+  resource_type_def: |-
+    class windmillhub(TypedDict):
+        asks: List[Any]
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    nocodb
+  resource_type_def: |-
+    class nocodb(TypedDict):
+        apiUrl: str
+        xc_token: str
+        table: str
+        workspace: str
+- lang: |-
+    python
+  resource_type: |-
+    s3
+  resource_type_def: |-
+    class s3(TypedDict):
+        endPoint: str
+        port: int
+        useSSL: bool
+        pathStyle: bool
+        bucket: str
+        accessKey: str
+        secretKey: str
+        region: str
+- lang: |-
+    python
+  resource_type: |-
+    nextcloud
+  resource_type_def: |-
+    class nextcloud(TypedDict):
+        baseUrl: str
+        username: str
+        password: str
+- lang: |-
+    python
+  resource_type: |-
+    firebase
+  resource_type_def: |-
+    class firebase(TypedDict):
+        apiKey: str
+        authDomain: str
+        projectId: str
+        storageBucket: str
+        messagingSenderId: str
+        appId: str
+        measurementId: str
+- lang: |-
+    python
+  resource_type: |-
+    telegram
+  resource_type_def: |-
+    class telegram(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    matrix
+  resource_type_def: |-
+    class matrix(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gsheets
+  resource_type_def: |-
+    class gsheets(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    discordwebhook
+  resource_type_def: |-
+    class discordwebhook(TypedDict):
+        webhook_url: str
+- lang: |-
+    python
+  resource_type: |-
+    sendgrid
+  resource_type_def: |-
+    class sendgrid(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    notion
+  resource_type_def: |-
+    class notion(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    surrealdb
+  resource_type_def: |-
+    class surrealdb(TypedDict):
+        url: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    mailgun
+  resource_type_def: |-
+    class mailgun(TypedDict):
+        api_key: str
+- lang: |-
+    python
+  resource_type: |-
+    rss
+  resource_type_def: |-
+    class rss(TypedDict):
+        url: str
+- lang: |-
+    python
+  resource_type: |-
+    telegram
+  resource_type_def: |-
+    class telegram(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    matrix
+  resource_type_def: |-
+    class matrix(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    windmill
+  resource_type_def: |-
+    class windmill(TypedDict):
+        workspace: str
+        id: str
+        requestBody: dict
+- lang: |-
+    python
+  resource_type: |-
+    notion
+  resource_type_def: |-
+    class notion(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    telegram
+  resource_type_def: |-
+    class telegram(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gsheets
+  resource_type_def: |-
+    class gsheets(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    supabase
+  resource_type_def: |-
+    class supabase(TypedDict):
+        url: str
+        key: str
+- lang: |-
+    python
+  resource_type: |-
+    funkwhale
+  resource_type_def: |-
+    class funkwhale(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    mongodbrest
+  resource_type_def: |-
+    class mongodbrest(TypedDict):
+        endpoint: str
+        api_key: str
+- lang: |-
+    python
+  resource_type: |-
+    discordbotconfiguration
+  resource_type_def: |-
+    class discordbotconfiguration(TypedDict):
+        public_key: str
+        application_id: str
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    postgresql
+  resource_type_def: |-
+    class postgresql(TypedDict):
+        host: str
+        port: int
+        user: str
+        dbname: str
+        sslmode: str
+        password: str
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    http
+  resource_type_def: |-
+    class http(TypedDict):
+        response: str
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mongodbrest
+  resource_type_def: |-
+    class mongodbrest(TypedDict):
+        endpoint: str
+        api_key: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gcal
+  resource_type_def: |-
+    class gcal(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gsheets
+  resource_type_def: |-
+    class gsheets(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    matrix
+  resource_type_def: |-
+    class matrix(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    hubspot
+  resource_type_def: |-
+    class hubspot(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    http
+  resource_type_def: |-
+    class http(TypedDict):
+        ok: bool
+        status: int
+        text: str
+- lang: |-
+    python
+  resource_type: |-
+    main_return
+  resource_type_def: |-
+    class main_return(TypedDict):
+        arg: str
+- lang: |-
+    python
+  resource_type: |-
+    gsheets
+  resource_type_def: |-
+    class gsheets(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    supabase
+  resource_type_def: |-
+    class supabase(TypedDict):
+        url: str
+        key: str
+- lang: |-
+    python
+  resource_type: |-
+    gdocs
+  resource_type_def: |-
+    class gdocs(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    airtable
+  resource_type_def: |-
+    class airtable(TypedDict):
+        apiKey: str
+- lang: |-
+    python
+  resource_type: |-
+    http
+  resource_type_def: |-
+    class http(TypedDict):
+        ok: bool
+        status: int
+        text: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    value_typeddict
+  resource_type_def: |-
+    class value_typeddict(TypedDict):
+        pass
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    airtable
+  resource_type_def: |-
+    class airtable(TypedDict):
+        apiKey: str
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    telegram
+  resource_type_def: |-
+    class telegram(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mongodbrest
+  resource_type_def: |-
+    class mongodbrest(TypedDict):
+        endpoint: str
+        api_key: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        text: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    telegram
+  resource_type_def: |-
+    class telegram(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    job_service
+  resource_type_def: |-
+    class job_service(TypedDict):
+        workspace: str
+        suspended: bool
+        per_page: int
+        script_path_exact: Optional[str]
+- lang: |-
+    python
+  resource_type: |-
+    Supabase
+  resource_type_def: |-
+    class Supabase(TypedDict):
+        url: str
+        key: str
+- lang: |-
+    python
+  resource_type: |-
+    currencyapi
+  resource_type_def: |-
+    class currencyapi(TypedDict):
+        apiKey: str
+- lang: |-
+    python
+  resource_type: |-
+    discordwebhook
+  resource_type_def: |-
+    class discordwebhook(TypedDict):
+        webhook_url: str
+- lang: |-
+    python
+  resource_type: |-
+    gsheets
+  resource_type_def: |-
+    class gsheets(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    error_details
+  resource_type_def: |-
+    class error_details(TypedDict):
+        message: str
+        code: int
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    matrix
+  resource_type_def: |-
+    class matrix(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    smtp
+  resource_type_def: |-
+    class smtp(TypedDict):
+        host: str
+        port: int
+        user: str
+        password: str
+- lang: |-
+    python
+  resource_type: |-
+    http
+  resource_type_def: |-
+    class http(TypedDict):
+        status: int
+        statusText: str
+- lang: |-
+    python
+  resource_type: |-
+    sendgrid
+  resource_type_def: |-
+    class sendgrid(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mongodbrest
+  resource_type_def: |-
+    class mongodbrest(TypedDict):
+        endpoint: str
+        api_key: str
+- lang: |-
+    python
+  resource_type: |-
+    notion
+  resource_type_def: |-
+    class notion(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    post
+  resource_type_def: |-
+    class post(TypedDict):
+        name: str
+        title: str
+        selftext: str
+        url: str
+- lang: |-
+    python
+  resource_type: |-
+    sendgrid_type
+  resource_type_def: |-
+    class sendgrid_type(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    github
+  resource_type_def: |-
+    class github(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mongodbrest
+  resource_type_def: |-
+    class mongodbrest(TypedDict):
+        endpoint: str
+        api_key: str
+- lang: |-
+    python
+  resource_type: |-
+    firebase
+  resource_type_def: |-
+    class firebase(TypedDict):
+        apiKey: str
+        authDomain: str
+        projectId: str
+        storageBucket: str
+        messagingSenderId: str
+        appId: str
+        measurementId: str
+- lang: |-
+    python
+  resource_type: |-
+    sendgrid
+  resource_type_def: |-
+    class sendgrid(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mongodbrest
+  resource_type_def: |-
+    class mongodbrest(TypedDict):
+        endpoint: str
+        api_key: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    nextcloud
+  resource_type_def: |-
+    class nextcloud(TypedDict):
+        baseUrl: str
+        username: str
+        password: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    firebase
+  resource_type_def: |-
+    class firebase(TypedDict):
+        apiKey: str
+        authDomain: str
+        projectId: str
+        storageBucket: str
+        messagingSenderId: str
+        appId: str
+        measurementId: str
+- lang: |-
+    python
+  resource_type: |-
+    sendgrid
+  resource_type_def: |-
+    class sendgrid(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    sendgrid
+  resource_type_def: |-
+    class sendgrid(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    sendgrid
+  resource_type_def: |-
+    class sendgrid(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    hubspot
+  resource_type_def: |-
+    class hubspot(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    sendgrid_token
+  resource_type_def: |-
+    class sendgrid_token(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    sendgrid_typed
+  resource_type_def: |-
+    class sendgrid_typed(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    telegram
+  resource_type_def: |-
+    class telegram(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gsheets
+  resource_type_def: |-
+    class gsheets(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    telegram
+  resource_type_def: |-
+    class telegram(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gmail
+  resource_type_def: |-
+    class gmail(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    s3
+  resource_type_def: |-
+    class s3(TypedDict):
+        endPoint: str
+        port: int
+        useSSL: bool
+        pathStyle: bool
+        bucket: str
+        accessKey: str
+        secretKey: str
+        region: str
+- lang: |-
+    python
+  resource_type: |-
+    client
+  resource_type_def: |-
+    class client(TypedDict):
+        client: str
+- lang: |-
+    python
+  resource_type: |-
+    discordwebhook
+  resource_type_def: |-
+    class discordwebhook(TypedDict):
+        webhook_url: str
+- lang: |-
+    python
+  resource_type: |-
+    github
+  resource_type_def: |-
+    class github(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gsheets
+  resource_type_def: |-
+    class gsheets(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mongodbrest
+  resource_type_def: |-
+    class mongodbrest(TypedDict):
+        endpoint: str
+        api_key: str
+- lang: |-
+    python
+  resource_type: |-
+    pinecone
+  resource_type_def: |-
+    class pinecone(TypedDict):
+        apiKey: str
+        environment: str
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    appwrite
+  resource_type_def: |-
+    class appwrite(TypedDict):
+        endpoint: str
+        project: str
+        key: str
+        self_signed: bool
+- lang: |-
+    python
+  resource_type: |-
+    gcal
+  resource_type_def: |-
+    class gcal(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    windmill
+  resource_type_def: |-
+    class windmill(TypedDict):
+        approvalPage: str
+- lang: |-
+    python
+  resource_type: |-
+    github
+  resource_type_def: |-
+    class github(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    hackernews
+  resource_type_def: |-
+    class hackernews(TypedDict):
+        text: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    matrix
+  resource_type_def: |-
+    class matrix(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gcal
+  resource_type_def: |-
+    class gcal(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    appdata
+  resource_type_def: |-
+    class appdata(TypedDict):
+        apps: List[Any]
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    hubspot
+  resource_type_def: |-
+    class hubspot(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    supabase
+  resource_type_def: |-
+    class supabase(TypedDict):
+        url: str
+        key: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe_config
+  resource_type_def: |-
+    class stripe_config(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    msteamswebhook
+  resource_type_def: |-
+    class msteamswebhook(TypedDict):
+        webhook_url: str
+- lang: |-
+    python
+  resource_type: |-
+    gcal
+  resource_type_def: |-
+    class gcal(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    supabase
+  resource_type_def: |-
+    class supabase(TypedDict):
+        url: str
+        key: str
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    firebase
+  resource_type_def: |-
+    class firebase(TypedDict):
+        apiKey: str
+        authDomain: str
+        projectId: str
+        storageBucket: str
+        messagingSenderId: str
+        appId: str
+        measurementId: str
+- lang: |-
+    python
+  resource_type: |-
+    s3
+  resource_type_def: |-
+    class s3(TypedDict):
+        endPoint: str
+        port: int
+        useSSL: bool
+        pathStyle: bool
+        bucket: str
+        accessKey: str
+        secretKey: str
+        region: str
+- lang: |-
+    python
+  resource_type: |-
+    matrix
+  resource_type_def: |-
+    class matrix(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    telegram
+  resource_type_def: |-
+    class telegram(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    hubspot
+  resource_type_def: |-
+    class hubspot(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    s3
+  resource_type_def: |-
+    class s3(TypedDict):
+        endPoint: str
+        port: int
+        useSSL: bool
+        pathStyle: bool
+        bucket: str
+        accessKey: str
+        secretKey: str
+        region: str
+- lang: |-
+    python
+  resource_type: |-
+    airtable
+  resource_type_def: |-
+    class airtable(TypedDict):
+        apiKey: str
+- lang: |-
+    python
+  resource_type: |-
+    pinecone
+  resource_type_def: |-
+    class pinecone(TypedDict):
+        apiKey: str
+        environment: str
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gcal
+  resource_type_def: |-
+    class gcal(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    pinecone
+  resource_type_def: |-
+    class pinecone(TypedDict):
+        apiKey: str
+        environment: str
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gsheets
+  resource_type_def: |-
+    class gsheets(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    matrix
+  resource_type_def: |-
+    class matrix(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    github
+  resource_type_def: |-
+    class github(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mongodbrest
+  resource_type_def: |-
+    class mongodbrest(TypedDict):
+        endpoint: str
+        api_key: str
+- lang: |-
+    python
+  resource_type: |-
+    postgresql
+  resource_type_def: |-
+    class postgresql(TypedDict):
+        host: str
+        port: int
+        user: str
+        dbname: str
+        sslmode: str
+        password: str
+- lang: |-
+    python
+  resource_type: |-
+    flowdata
+  resource_type_def: |-
+    class flowdata(TypedDict):
+        flows: List[Any]
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    gcal
+  resource_type_def: |-
+    class gcal(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    ocs
+  resource_type_def: |-
+    class ocs(TypedDict):
+        pass
+- lang: |-
+    python
+  resource_type: |-
+    pinecone
+  resource_type_def: |-
+    class pinecone(TypedDict):
+        apiKey: str
+        environment: str
+- lang: |-
+    python
+  resource_type: |-
+    gsheets
+  resource_type_def: |-
+    class gsheets(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    starrer
+  resource_type_def: |-
+    class starrer(TypedDict):
+        id: int
+        login: str
+        type: str
+        url: str
+        starredAt: int
+        email: str
+        name: str
+- lang: |-
+    python
+  resource_type: |-
+    error_details
+  resource_type_def: |-
+    class error_details(TypedDict):
+        message: str
+        code: int
+        # Add other relevant fields as needed
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    telegram
+  resource_type_def: |-
+    class telegram(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    openai
+  resource_type_def: |-
+    class openai(TypedDict):
+        api_key: str
+        organization_id: str
+- lang: |-
+    python
+  resource_type: |-
+    mysql
+  resource_type_def: |-
+    class mysql(TypedDict):
+        host: str
+        port: int
+        user: str
+        database: str
+        password: str
+        ssl: bool
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    aws
+  resource_type_def: |-
+    class aws(TypedDict):
+        aws_access_key_id: str
+        aws_secret_access_key: str
+        region_name: str
+- lang: |-
+    python
+  resource_type: |-
+    linkedin
+  resource_type_def: |-
+    class linkedin(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gdocs
+  resource_type_def: |-
+    class gdocs(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    hubspot
+  resource_type_def: |-
+    class hubspot(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    matrix
+  resource_type_def: |-
+    class matrix(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    matrix
+  resource_type_def: |-
+    class matrix(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gmail
+  resource_type_def: |-
+    class gmail(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gdocs
+  resource_type_def: |-
+    class gdocs(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gdrive
+  resource_type_def: |-
+    class gdrive(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    ipinfo
+  resource_type_def: |-
+    class ipinfo(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    matrix
+  resource_type_def: |-
+    class matrix(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gcal
+  resource_type_def: |-
+    class gcal(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    stripe
+  resource_type_def: |-
+    class stripe(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    hubspot
+  resource_type_def: |-
+    class hubspot(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    github
+  resource_type_def: |-
+    class github(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gitlab
+  resource_type_def: |-
+    class gitlab(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    gcal
+  resource_type_def: |-
+    class gcal(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    clickhouse
+  resource_type_def: |-
+    class clickhouse(TypedDict):
+        host: str
+        username: str
+        password: str
+- lang: |-
+    python
+  resource_type: |-
+    gsheets
+  resource_type_def: |-
+    class gsheets(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    matrix
+  resource_type_def: |-
+    class matrix(TypedDict):
+        baseUrl: str
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    airtable
+  resource_type_def: |-
+    class airtable(TypedDict):
+        apiKey: str
+- lang: |-
+    python
+  resource_type: |-
+    scheduleapi
+  resource_type_def: |-
+    class scheduleapi(TypedDict):
+        workspace_id: str
+        schedule_path: str
+        enabled: bool
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    sendgrid
+  resource_type_def: |-
+    class sendgrid(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    mailchimp
+  resource_type_def: |-
+    class mailchimp(TypedDict):
+        api_key: str
+        server: str
+- lang: |-
+    python
+  resource_type: |-
+    sendgrid_type
+  resource_type_def: |-
+    class sendgrid_type(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    slack
+  resource_type_def: |-
+    class slack(TypedDict):
+        token: str
+- lang: |-
+    python
+  resource_type: |-
+    wmill
+  resource_type_def: |-
+    class wmill(TypedDict):
+        workspace: str
+        suspend: bool
+        perPage: int
+        scriptPathExact: Optional[str]
+- lang: |-
+    python
+  resource_type: |-
+    qrcode_typeddict
+  resource_type_def: |-
+    class qrcode_typeddict(TypedDict):
+        qr_url: str
+- lang: |-
+    python
+  resource_type: |-
+    openai_auth
+  resource_type_def: |-
+    class openai_auth(TypedDict):
+        api_key: str
+        organization_id: str
+- lang: |-
+    python
+  resource_type: |-
+    datadog
+  resource_type_def: |-
+    class datadog(TypedDict):
+        apiKey: str
+        appKey: str
+        apiBase: str
+- lang: |-
+    python
+  resource_type: |-
+    record_type
+  resource_type_def: |-
+    class record_type(TypedDict):
+        type: str
+        table: str
+        record: Any
+        schema: str
+        old_record: Any
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    S3
+  resource_type_def: |-
+    type S3 = {
+      endPoint: string;
+      port: number;
+      useSSL: boolean;
+      pathStyle: boolean;
+      bucket: string;
+      accessKey: string;
+      secretKey: string;
+      region: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Pinecone
+  resource_type_def: |-
+    type Pinecone = {
+      apiKey: string;
+      environment: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Hubspot
+  resource_type_def: |-
+    type Hubspot = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Faunadb
+  resource_type_def: |-
+    type Faunadb = {
+      region: string;
+      secret: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Telegram
+  resource_type_def: |-
+    type Telegram = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Openai
+  resource_type_def: |-
+    type Openai = {
+      api_key: string;
+      organization_id: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Notion
+  resource_type_def: |-
+    type Notion = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Sendgrid
+  resource_type_def: |-
+    type Sendgrid = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Faunadb
+  resource_type_def: |-
+    type Faunadb = {
+      region: string;
+      secret: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Telegram
+  resource_type_def: |-
+    type Telegram = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Openai
+  resource_type_def: |-
+    type Openai = {
+      api_key: string;
+      organization_id: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gsheets
+  resource_type_def: |-
+    type Gsheets = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gitlab
+  resource_type_def: |-
+    type Gitlab = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Airtable
+  resource_type_def: |-
+    type Airtable = {
+      apiKey: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Openai
+  resource_type_def: |-
+    type Openai = {
+      api_key: string;
+      organization_id: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Notion
+  resource_type_def: |-
+    type Notion = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Supabase
+  resource_type_def: |-
+    type Supabase = {
+      url: string;
+      key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Notion
+  resource_type_def: |-
+    type Notion = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gsheets
+  resource_type_def: |-
+    type Gsheets = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Openai
+  resource_type_def: |-
+    type Openai = {
+      api_key: string;
+      organization_id: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Airtable
+  resource_type_def: |-
+    type Airtable = {
+      apiKey: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Github
+  resource_type_def: |-
+    type Github = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Github
+  resource_type_def: |-
+    type Github = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gsheets
+  resource_type_def: |-
+    type Gsheets = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gitlab
+  resource_type_def: |-
+    type Gitlab = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Nocodb
+  resource_type_def: |-
+    type Nocodb = {
+      apiUrl: string;
+      xc_token: string;
+      table: string;
+      workspace: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    S3
+  resource_type_def: |-
+    type S3 = {
+      endPoint: string;
+      port: number;
+      useSSL: boolean;
+      pathStyle: boolean;
+      bucket: string;
+      accessKey: string;
+      secretKey: string;
+      region: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Nextcloud
+  resource_type_def: |-
+    type Nextcloud = {
+      baseUrl: string;
+      username: string;
+      password: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Firebase
+  resource_type_def: |-
+    type Firebase = {
+      apiKey: string;
+      authDomain: string;
+      projectId: string;
+      storageBucket: string;
+      messagingSenderId: string;
+      appId: string;
+      measurementId: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Telegram
+  resource_type_def: |-
+    type Telegram = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Matrix
+  resource_type_def: |-
+    type Matrix = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gsheets
+  resource_type_def: |-
+    type Gsheets = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    DiscordWebhook
+  resource_type_def: |-
+    type DiscordWebhook = {
+      webhook_url: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Sendgrid
+  resource_type_def: |-
+    type Sendgrid = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Notion
+  resource_type_def: |-
+    type Notion = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Surrealdb
+  resource_type_def: |-
+    type Surrealdb = {
+      url: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Rss
+  resource_type_def: |-
+    type Rss = {
+      url: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Telegram
+  resource_type_def: |-
+    type Telegram = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Matrix
+  resource_type_def: |-
+    type Matrix = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Notion
+  resource_type_def: |-
+    type Notion = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Telegram
+  resource_type_def: |-
+    type Telegram = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gsheets
+  resource_type_def: |-
+    type Gsheets = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Supabase
+  resource_type_def: |-
+    type Supabase = {
+      url: string;
+      key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Funkwhale
+  resource_type_def: |-
+    type Funkwhale = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    MongodbRest
+  resource_type_def: |-
+    type MongodbRest = {
+      endpoint: string;
+      api_key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    DiscordBotConfiguration
+  resource_type_def: |-
+    type DiscordBotConfiguration = {
+      public_key: string;
+      application_id: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Postgresql
+  resource_type_def: |-
+    type Postgresql = {
+      host: string;
+      port: number;
+      user: string;
+      dbname: string;
+      sslmode: string;
+      password: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    MongodbRest
+  resource_type_def: |-
+    type MongodbRest = {
+      endpoint: string;
+      api_key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gcal
+  resource_type_def: |-
+    type Gcal = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gsheets
+  resource_type_def: |-
+    type Gsheets = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Matrix
+  resource_type_def: |-
+    type Matrix = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Hubspot
+  resource_type_def: |-
+    type Hubspot = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gsheets
+  resource_type_def: |-
+    type Gsheets = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Supabase
+  resource_type_def: |-
+    type Supabase = {
+      url: string;
+      key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdocs
+  resource_type_def: |-
+    type Gdocs = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Airtable
+  resource_type_def: |-
+    type Airtable = {
+      apiKey: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Airtable
+  resource_type_def: |-
+    type Airtable = {
+      apiKey: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Telegram
+  resource_type_def: |-
+    type Telegram = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    MongodbRest
+  resource_type_def: |-
+    type MongodbRest = {
+      endpoint: string;
+      api_key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Telegram
+  resource_type_def: |-
+    type Telegram = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Supabase
+  resource_type_def: |-
+    type Supabase = {
+      url: string;
+      key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Currencyapi
+  resource_type_def: |-
+    type Currencyapi = {
+      apiKey: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    DiscordWebhook
+  resource_type_def: |-
+    type DiscordWebhook = {
+      webhook_url: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gsheets
+  resource_type_def: |-
+    type Gsheets = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Matrix
+  resource_type_def: |-
+    type Matrix = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Smtp
+  resource_type_def: |-
+    type Smtp = {
+      host: string;
+      port: number;
+      user: string;
+      password: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Sendgrid
+  resource_type_def: |-
+    type Sendgrid = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    MongodbRest
+  resource_type_def: |-
+    type MongodbRest = {
+      endpoint: string;
+      api_key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Notion
+  resource_type_def: |-
+    type Notion = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Sendgrid
+  resource_type_def: |-
+    type Sendgrid = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Github
+  resource_type_def: |-
+    type Github = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    MongodbRest
+  resource_type_def: |-
+    type MongodbRest = {
+      endpoint: string;
+      api_key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Firebase
+  resource_type_def: |-
+    type Firebase = {
+      apiKey: string;
+      authDomain: string;
+      projectId: string;
+      storageBucket: string;
+      messagingSenderId: string;
+      appId: string;
+      measurementId: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Sendgrid
+  resource_type_def: |-
+    type Sendgrid = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    MongodbRest
+  resource_type_def: |-
+    type MongodbRest = {
+      endpoint: string;
+      api_key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Nextcloud
+  resource_type_def: |-
+    type Nextcloud = {
+      baseUrl: string;
+      username: string;
+      password: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Firebase
+  resource_type_def: |-
+    type Firebase = {
+      apiKey: string;
+      authDomain: string;
+      projectId: string;
+      storageBucket: string;
+      messagingSenderId: string;
+      appId: string;
+      measurementId: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Sendgrid
+  resource_type_def: |-
+    type Sendgrid = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Sendgrid
+  resource_type_def: |-
+    type Sendgrid = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Sendgrid
+  resource_type_def: |-
+    type Sendgrid = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Hubspot
+  resource_type_def: |-
+    type Hubspot = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Sendgrid
+  resource_type_def: |-
+    type Sendgrid = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Sendgrid
+  resource_type_def: |-
+    type Sendgrid = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Telegram
+  resource_type_def: |-
+    type Telegram = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gsheets
+  resource_type_def: |-
+    type Gsheets = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Telegram
+  resource_type_def: |-
+    type Telegram = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gmail
+  resource_type_def: |-
+    type Gmail = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    S3
+  resource_type_def: |-
+    type S3 = {
+      endPoint: string;
+      port: number;
+      useSSL: boolean;
+      pathStyle: boolean;
+      bucket: string;
+      accessKey: string;
+      secretKey: string;
+      region: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    DiscordWebhook
+  resource_type_def: |-
+    type DiscordWebhook = {
+      webhook_url: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Github
+  resource_type_def: |-
+    type Github = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gsheets
+  resource_type_def: |-
+    type Gsheets = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    MongodbRest
+  resource_type_def: |-
+    type MongodbRest = {
+      endpoint: string;
+      api_key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Pinecone
+  resource_type_def: |-
+    type Pinecone = {
+      apiKey: string;
+      environment: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Appwrite
+  resource_type_def: |-
+    type Appwrite = {
+      endpoint: string;
+      project: string;
+      key: string;
+      self_signed: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gcal
+  resource_type_def: |-
+    type Gcal = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Github
+  resource_type_def: |-
+    type Github = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Matrix
+  resource_type_def: |-
+    type Matrix = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gcal
+  resource_type_def: |-
+    type Gcal = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Hubspot
+  resource_type_def: |-
+    type Hubspot = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Supabase
+  resource_type_def: |-
+    type Supabase = {
+      url: string;
+      key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    MsTeamsWebhook
+  resource_type_def: |-
+    type MsTeamsWebhook = {
+      webhook_url: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gcal
+  resource_type_def: |-
+    type Gcal = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Supabase
+  resource_type_def: |-
+    type Supabase = {
+      url: string;
+      key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Firebase
+  resource_type_def: |-
+    type Firebase = {
+      apiKey: string;
+      authDomain: string;
+      projectId: string;
+      storageBucket: string;
+      messagingSenderId: string;
+      appId: string;
+      measurementId: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    S3
+  resource_type_def: |-
+    type S3 = {
+      endPoint: string;
+      port: number;
+      useSSL: boolean;
+      pathStyle: boolean;
+      bucket: string;
+      accessKey: string;
+      secretKey: string;
+      region: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Matrix
+  resource_type_def: |-
+    type Matrix = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Telegram
+  resource_type_def: |-
+    type Telegram = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Hubspot
+  resource_type_def: |-
+    type Hubspot = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    S3
+  resource_type_def: |-
+    type S3 = {
+      endPoint: string;
+      port: number;
+      useSSL: boolean;
+      pathStyle: boolean;
+      bucket: string;
+      accessKey: string;
+      secretKey: string;
+      region: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Airtable
+  resource_type_def: |-
+    type Airtable = {
+      apiKey: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Pinecone
+  resource_type_def: |-
+    type Pinecone = {
+      apiKey: string;
+      environment: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gcal
+  resource_type_def: |-
+    type Gcal = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Pinecone
+  resource_type_def: |-
+    type Pinecone = {
+      apiKey: string;
+      environment: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gsheets
+  resource_type_def: |-
+    type Gsheets = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Matrix
+  resource_type_def: |-
+    type Matrix = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Github
+  resource_type_def: |-
+    type Github = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    MongodbRest
+  resource_type_def: |-
+    type MongodbRest = {
+      endpoint: string;
+      api_key: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Postgresql
+  resource_type_def: |-
+    type Postgresql = {
+      host: string;
+      port: number;
+      user: string;
+      dbname: string;
+      sslmode: string;
+      password: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gcal
+  resource_type_def: |-
+    type Gcal = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Pinecone
+  resource_type_def: |-
+    type Pinecone = {
+      apiKey: string;
+      environment: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gsheets
+  resource_type_def: |-
+    type Gsheets = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Github
+  resource_type_def: |-
+    type Github = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Telegram
+  resource_type_def: |-
+    type Telegram = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Openai
+  resource_type_def: |-
+    type Openai = {
+      api_key: string;
+      organization_id: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mysql
+  resource_type_def: |-
+    type Mysql = {
+      host: string;
+      port: number;
+      user: string;
+      database: string;
+      password: string;
+      ssl: boolean;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Aws
+  resource_type_def: |-
+    type Aws = {
+      awsAccessKeyId: string;
+      awsSecretAccessKey: string;
+      region: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Linkedin
+  resource_type_def: |-
+    type Linkedin = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdocs
+  resource_type_def: |-
+    type Gdocs = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Hubspot
+  resource_type_def: |-
+    type Hubspot = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Matrix
+  resource_type_def: |-
+    type Matrix = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Matrix
+  resource_type_def: |-
+    type Matrix = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gmail
+  resource_type_def: |-
+    type Gmail = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdocs
+  resource_type_def: |-
+    type Gdocs = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gdrive
+  resource_type_def: |-
+    type Gdrive = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Matrix
+  resource_type_def: |-
+    type Matrix = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gcal
+  resource_type_def: |-
+    type Gcal = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Stripe
+  resource_type_def: |-
+    type Stripe = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Hubspot
+  resource_type_def: |-
+    type Hubspot = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Github
+  resource_type_def: |-
+    type Github = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gitlab
+  resource_type_def: |-
+    type Gitlab = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gcal
+  resource_type_def: |-
+    type Gcal = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Clickhouse
+  resource_type_def: |-
+    type Clickhouse = {
+      host: string;
+      username: string;
+      password: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Gsheets
+  resource_type_def: |-
+    type Gsheets = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Matrix
+  resource_type_def: |-
+    type Matrix = {
+      baseUrl: string;
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Airtable
+  resource_type_def: |-
+    type Airtable = {
+      apiKey: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Sendgrid
+  resource_type_def: |-
+    type Sendgrid = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Mailchimp
+  resource_type_def: |-
+    type Mailchimp = {
+      api_key: string;
+      server: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Sendgrid
+  resource_type_def: |-
+    type Sendgrid = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Slack
+  resource_type_def: |-
+    type Slack = {
+      token: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Openai
+  resource_type_def: |-
+    type Openai = {
+      api_key: string;
+      organization_id: string;
+    }
+- lang: |-
+    deno
+  resource_type: |-
+    Datadog
+  resource_type_def: |-
+    type Datadog = {
+      apiKey: string;
+      appKey: string;
+      apiBase: string;
+    }

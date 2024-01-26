@@ -3,13 +3,12 @@ import json
 import torch
 from torch import Tensor
 from torch.nn import functional as F
-import yaml
+from .utils import python_compile, ts_compile, to_camel_case, average_pool
 from tqdm import tqdm
+import yaml
 
-from .utils import python_compile, ts_compile, to_pascal_case, average_pool
 
-
-tokenizer = AutoTokenizer.from_pretrained("thenlper/gte-small", use_fast=False)
+tokenizer = AutoTokenizer.from_pretrained("thenlper/gte-small")
 model = AutoModel.from_pretrained("thenlper/gte-small")
 
 
@@ -23,38 +22,36 @@ def compute_embedding(text: str):
     return embeddings[0]
 
 
-with open("./data/utils/resource_types_embeddings.json", "r") as f:
-    resource_types_embeddings = json.load(f)
-with open("./data/utils/resource_types.json", "r") as f:
-    resource_types = json.load(f)
-
-
 def format_resource_type(rt: dict, lang: str):
     if lang == "deno" or lang == "bun":
-        return f"type {to_pascal_case(rt['name']).title()} = {ts_compile(json.loads(rt['schema']))}"
+        return f"type {to_camel_case(rt['name']).title()} = {ts_compile(json.loads(rt['schema']))}"
     elif lang == "python":
         return f"class {rt['name']}(TypedDict):\n{python_compile(json.loads(rt['schema']))}"
     else:
         raise Exception(f"Unknown language {lang}")
 
 
-def get_similar_resource_types(query: str, lang: str, limit: int = 10):
+def get_similar_resource_types(
+    embedding: str, lang: str, resource_types, resource_types_embeddings, limit: int = 3
+):
     queue = []
     for rt_emb in resource_types_embeddings:
-        sim = compute_embedding(query) @ torch.tensor(rt_emb["embedding"])
-        queue.append((rt_emb["name"], sim))
+        sim = embedding @ torch.tensor(rt_emb["embedding"])
+        queue.append((rt_emb["integration"], sim))
 
     queue.sort(key=lambda x: x[1], reverse=True)
 
     return list(
         map(
             lambda x: [
-                {
-                    **y,
-                    "type_string": format_resource_type(y, lang),
-                }
+                y["resource_type_def"]
                 for y in resource_types
-                if y["name"] == x[0]
+                if y["lang"] == lang
+                and (
+                    y["resource_type"] == x[0]
+                    if lang == "python"
+                    else y["resource_type"] == to_camel_case(x[0]).title()
+                )
             ][0],
             queue[:limit],
         )

@@ -255,9 +255,7 @@ def create_embeddings():
             json.dump(embeddings, f)
 
 
-def get_similar(text: str):
-    from .resource_types import compute_embedding
-
+def get_similar_openapi(embedding: torch.Tensor):
     with open("data/utils/integrations_embeddings.json", "r") as f:
         integrations = json.load(f)
 
@@ -266,7 +264,6 @@ def get_similar(text: str):
 
     openapi_apps = [el["app"] for el in index]
 
-    embedding = compute_embedding(text)
     queue = []
     for integration in tqdm(integrations):
         sim = embedding @ torch.tensor(integration["embedding"])
@@ -300,8 +297,8 @@ def get_similar(text: str):
         result = format_info(openapi_info)
 
         return result
-
-    return integration
+    else:
+        return ""
 
 
 if __name__ == "__main__":
@@ -310,4 +307,4 @@ if __name__ == "__main__":
     # add_openapi_to_benchmark()
     # add_app_to_instructions()
     # create_embeddings()
-    print(get_similar("get a asana team by id"))
+    pass
