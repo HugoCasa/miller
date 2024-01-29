@@ -4,13 +4,19 @@ This is the official repository for my Master's thesis, titled "Automated Script
 
 All models' weights are available on my [HuggingFace profile](https://huggingface.co/HugoCasa).
 
-Here is a overview of the files in this repository:
+Here is an overview of the files in this repository:
 - `src/main.py`, `src/trainer.py`, `src/dpo.py`, `src/prompts.py`, `src/models.py` and `src/datasets.py` contain the code for training the models. It is setup to run using DDP.
 - `src/eval.py`, `src/benchmark.py`, and `src/inference.py` contain the code for evaluating the models.
-- `src/resource_types.py` and `src/openapi.py` contain the code for the pre-processing and the retrieval system of the resource types and OpenAPI information.
-- All the other files inside the `src/folder` contain the code for data generation using GPT-4-turbo and data processing. You need to create an `.env` file in the root with an OPENAI_API_KEY variable to run those files.
+- `src/resource_types.py` and `src/openapi.py` contain the code for the pre-processing and retrieval systems of the resource types and OpenAPI information.
+- `src/synthetic_*` files contain the code for collecting the prompts and generating the synthetic data for gen, edit and fix tasks.
+- `src/mbpp_processing.py` and `src/humaneval_processing.py` contain the code for adapting the MBPP and Humaneval datasets
+- `src/dpo_gen.py` and `src/dpo_pairs_scoring.py` contain the code for the additional DPO generation and ranking.
+- `src/data_prep.py` contains the data for compiling the complete dataset for training (generation task only).
+- `src/convertor.py` contains the code to convert the data between the different programming languages.
 - `ìnference_speed.py` and `inference_speed_apis.py` contain the code for measuring the inference speed of the models.
 - `eval_embeddings.py` and `eval_twostepgen.py` contain the code for evaluating the embeddings and the two-step synthetic data generation.
+
+You need to create an `.env` file in the root folder with an OPENAI_API_KEY variable to run the data generation files.
 
 The data used for training and inference (resource types + OpenAPI embeddings) is in the `data` folder. The benchmark data is not included as it contains credentials.
 The validation and benchmark results can be found in the `models` folder.
